@@ -47,6 +47,7 @@ let subgraphSchema = buildSubgraphSchema({ typeDefs, resolvers });
 
 const apolloServer = new ApolloServer({
   schema: subgraphSchema,
+  introspection: true,
 });
 
 const startServer = apolloServer.start();

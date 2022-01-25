@@ -41,6 +41,7 @@ const apolloServer = new ApolloServer({
 
   // Subscriptions are unsupported but planned for a future Gateway version.
   subscriptions: false,
+  introspection: true,
 });
 
 const startServer = apolloServer.start();
