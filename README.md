@@ -1,14 +1,13 @@
 # Turbo Federation
 
-This is a combination of official starter Turborepo, NextJs and Apollo Subgraph(federation) demo.
+This is a combination of official starter Turborepo, NextJs and Apollo Supergraph (Federation) demo.
 
 ## What's inside?
 
 This turborepo uses [pnpm](https://pnpm.io) as a packages manager.
-It is not only turbo charged with turbo but it also has integrated subgraph demo of Apollo.
+It is not only turbo charged with turbo but it also has integrated supergraph subgraph demo of Apollo.
 
-Althought it is not a complete example with nice file names and integrated rover etc.
-However I hope this could give you an insight to start building your own super Turbo Federated Graphql app.
+Althought it is not a complete example with nice file names and integrated rover etc, I hope this could give you an insight to start building your own super Turbo Federated Graphql apps.
 
 It includes the following packages/apps:
 
@@ -57,7 +56,9 @@ cd turbo-federation
 pnpm run dev
 ```
 
-to test everything is running perfectly try this query on localhost:3000/api/graphql
+To test everything is running perfectly try this query locally on localhost:3000/api/graphql
+or
+checkout the production: [Turbo Federation Demo](https://turbo-federation.vercel.app/api/graphql)
 
 ```
 query Query {
