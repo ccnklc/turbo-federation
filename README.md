@@ -38,6 +38,16 @@ This turborepo has some additional tools already setup for you:
 
 This repository is using (PNPM) package manager to manage your monorepo .
 
+create .env.local file in apps/web directory
+insert the variables below
+
+```
+ACCOUNTS_GRAPHQL_ENDPOINT=http://localhost:3002/api/graphql
+REVIEWS_GRAPHQL_ENDPOINT=http://localhost:3005/api/graphql
+INVENTORY_GRAPHQL_ENDPOINT=http://localhost:3003/api/graphql
+PRODUCTS_GRAPHQL_ENDPOINT=http://localhost:3004/api/graphql
+```
+
 ### Build
 
 To build all apps and packages, run the following command:
