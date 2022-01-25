@@ -1,9 +1,9 @@
 {
-  "name": "web",
+  "name": "reviews",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --port 3005",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -13,7 +13,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "ui": "workspace:*",
-    "@apollo/gateway": "0.46.0",
+    "@apollo/subgraph": "0.1.5",
     "apollo-server-micro": "3.6.2",
     "graphql": "15.8.0",
     "micro": "9.3.4"

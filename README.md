@@ -1,15 +1,25 @@
-# Turborepo starter with pnpm
+# Turbo Federation
 
-This is an official starter turborepo.
+This is a combination of official starter Turborepo, NextJs and Apollo Subgraph(federation) demo.
 
 ## What's inside?
 
-This turborepo uses [pnpm](https://pnpm.io) as a packages manager. It includes the following packages/apps:
+This turborepo uses [pnpm](https://pnpm.io) as a packages manager.
+It is not only turbo charged with turbo but it also has integrated subgraph demo of Apollo.
+
+Althought it is not a complete example with nice file names and integrated rover etc.
+However I hope this could give you an insight to start building your own super Turbo Federated Graphql app.
+
+It includes the following packages/apps:
 
 ### Apps and Packages
 
 - `docs`: a [Next.js](https://nextjs.org) app
-- `web`: another [Next.js](https://nextjs.org) app
+- `web`: another [Next.js](https://nextjs.org) app uses apollo gateway that combines all the subgraphs and serve them in one supergraph
+- `accounts`: another [Next.js](https://nextjs.org) app uses apollo subgraph to create subgraphs for accounts
+- `inventory`: another [Next.js](https://nextjs.org) app uses apollo subgraph to create subgraphs for inventory
+- `products`: another [Next.js](https://nextjs.org) app uses apollo subgraph to create subgraphs for products
+- `reviews`: another [Next.js](https://nextjs.org) app uses apollo subgraph to create subgraphs for reviews
 - `ui`: a stub React component library shared by both `web` and `docs` applications
 - `config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
@@ -27,14 +37,14 @@ This turborepo has some additional tools already setup for you:
 
 ## Setup
 
-This repository is used in the `npx create-turbo@latest` command, and selected when choosing which package manager you wish to use with your monorepo (PNPM).
+This repository is using (PNPM) package manager to manage your monorepo .
 
 ### Build
 
 To build all apps and packages, run the following command:
 
 ```
-cd my-turborepo
+cd turbo-federation
 pnpm run build
 ```
 
@@ -43,8 +53,39 @@ pnpm run build
 To develop all apps and packages, run the following command:
 
 ```
-cd my-turborepo
+cd turbo-federation
 pnpm run dev
+```
+
+to test everything is running perfectly try this query on localhost:3000/api/graphql
+
+```
+query Query {
+  topProducts(first: 5) {
+    inStock
+    name
+    price
+    reviews {
+      author {
+        name
+        username
+      }
+      body
+    }
+    shippingEstimate
+    weight
+  }
+  me {
+    name
+    username
+    reviews {
+      product {
+        name
+      }
+      body
+    }
+  }
+}
 ```
 
 ### Remote Caching
@@ -54,7 +95,7 @@ Turborepo can use a technique known as [Remote Caching (Beta)](https://turborepo
 By default, Turborepo will cache locally. To enable Remote Caching (Beta) you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
 
 ```
-cd my-turborepo
+cd turbo-federation
 pnpx turbo login
 ```
 
