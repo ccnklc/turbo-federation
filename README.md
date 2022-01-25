@@ -58,7 +58,7 @@ pnpm run dev
 
 To test everything is running perfectly try this query locally on localhost:3000/api/graphql
 or
-checkout the production: [Turbo Federation Demo](https://turbo-federation.vercel.app/api/graphql)
+checkout the production gateway on Apollo Studio: [Turbo Federation Demo](https://studio.apollographql.com/sandbox/explorer?endpoint=https%3A%2F%2Fturbo-federation.vercel.app%2Fapi%2Fgraphql)
 
 ```
 query Query {
